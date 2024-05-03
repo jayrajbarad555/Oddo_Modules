@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+<!-- ************************************************************************************************** -->
+
+    <!-- _________________________________VIEW FORM OF EMP__________________________________ -->
+
+        <record id="view_employee_emp_form" model="ir.ui.view">
+        <field name="name">emp.emp.form</field>
+        <field name="model">emp.emp</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                    
+                    <group>
+                        <field name="name"/>
+                        <field name="work_mobile"/>
+                        <field name="work_phone"/>
+                        <field name="work_email"/>
+                    </group>
+                    <group>
+                      <field name="job_position"/>
+                        <field name="manager_id"/>
+                        <field name="coach_id"/>
+                    </group>
+                        
+                      
+                    </group>
+                                                               <!-- ______TAB MENU________ -->
+                        <notebook>
+                            <page string="WORK INFORMATION" >   
+                                <group  string = "location">
+                                    <field name="address_id"/>
+                                    <field name="work_location_id"/>      
+                                </group>    
+                                 <group  string = "schedule">
+                                    <field name="resource_calendar_id"/>
+                                    <field name="time_zone"/>      
+                                 </group>  
+                            </page>      
+
+                            <page string="PRIVATE INFORMATION" >
+                                
+                                <group  string = "private contect">
+                                    <field name="address_home_id"/>
+                                    <field name="language"/> 
+                                    <field name="home_distance"/>      
+                                </group>    
+                                
+                                 <group  string = "Education">
+                                   <field name="certificate"/>
+                                        <field name="study_field"/>
+                                        <field name="study_school"/>
+                                        <!-- <field name="has_work_permit"/> -->
+                                 </group>  
+
+                                  <group  string = "Work permit">
+                                        <field name="visa_no"/>
+                                        <field name="permit_no"/>
+                                        <field name="visa_expire"/>
+                                        <field name="work_permit_expiration_date"/>
+                                        <field name="work_permit_name" />    
+                                  </group> 
+
+                                   <group string="Family Status">
+                                        <field name="marital"/>
+                                        <field name="children"/>                                
+                                   </group>
+
+                                    <group string="Emergency">
+                                        <field name="emergency_contact"/>
+                                        <field name="emergency_phone"/>                                
+                                   </group>
+
+                                    <group string="Citizenship">
+                                        <field name="country_id"/>
+                                        <field name="identification_id"/>
+                                        <field name="passport_id"/>
+                                        <field name="gender"/>
+                                        <field name="birthday"/>
+                                        <field name="place_of_birth"/>
+                                        <field name="country_of_birth"/>
+                                    </group>
+
+                            </page>  
+
+                            <page string="HR SETTING" >
+                                <group  string = "status">
+                                    <!-- <field name="employee_type"/> -->
+                                    <field name="user_id" string="Related User"/>
+                                </group>    
+
+                                <group string="Attendance/Point of Sale" name="identification_group">
+                                    <field name="pin" string="PIN Code"/>
+                                </group>
+                            </page>      
+
+                        </notebook>   
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    <!-- ____________________________VIEW TREE OF EMP_____________________________________-->
+
+        <record id="view_employee_emp_tree" model="ir.ui.view">
+            <field name="name">emp.emp.tree</field>
+            <field name="model">emp.emp</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="work_mobile"/>
+                    <field name="work_phone"/>
+                    <field name="work_email"/>
+                    <field name="job_position"/>
+                    <field name="manager_id"/>
+                    <field name="coach_id"/>
+                </tree>
+            </field>
+        </record>
+
+    <!-- ___________________________EMP ACTIONS__________________________________________ -->
+
+        <record id="actions_employee_emp" model="ir.actions.act_window">
+            <field name="name">emp</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">emp.emp</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!-- ************************************************************************************************* -->
+
+    </data>
+</odoo>  

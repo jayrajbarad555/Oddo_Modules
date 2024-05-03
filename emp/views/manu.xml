@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+<!-- ************************MENUS******************************************************** -->
+        
+    <!-- _______________EMPLOYEE MENU____________________________ -->
+
+        <menuitem id="menu_employee_root"  
+                  name="Employee"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_employee,emp.group_Admin"
+                  
+                  />
+
+    <!-- ______________SUBMENU OF EMPLOYEE_________________________ -->
+
+        <menuitem id="menu_employee_employees"
+                  name="Employeess"
+                  parent="menu_employee_root"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_employee,emp.group_Admin"
+                 />
+
+    <!-- ________________SUBMENU OF EMPLOYEES______________________ -->
+
+                <menuitem id="menu_emp"
+                  name="emp"
+                  parent="menu_employee_employees"
+                  action="actions_employee_emp"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_employee,emp.group_Admin"
+                  />
+
+
+       <!-- ___________DEPARTMENT MENU _______________________  -->
+
+       <menuitem id="menu_employee_departments"
+                  name="Departments"
+                  parent="menu_employee_root"
+                  action="actions_department"
+                  groups="emp.group_manager,emp.group_Admin"
+                  />
+                 
+  
+
+        <!-- ____________CONFIGURATION MENU___________________________ -->
+
+        <menuitem id="menu_employee_configuration"
+                  name="Configuration"
+                  parent="menu_employee_root"
+                  groups="emp.group_manager,emp.group_Admin"
+                  
+                  sequence="10"/>
+
+        <!-- _________________SUBMENU OF CONFIGURATION_____________________ -->
+    
+         <menuitem id="menu_confi_employee"
+                  name="Employee"
+                  parent="menu_employee_configuration"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_Admin"/>
+
+<!-- _________________SUBMENU OF CONFI-EMPLOYEE_____________________ -->
+
+        <menuitem id="menu_employee_department"
+                  name="Department"
+                  parent="menu_confi_employee"
+                  action="actions_dept"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_Admin"/>
+
+
+<!-- _________________SUBMENU OF CONFI-EMPLOYEE_____________________ -->
+
+        <menuitem id="menu_employee_work_location"
+                  name="Work information"
+                  parent="menu_confi_employee"
+                  action="actions_work_location"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_Admin"/>
+
+
+<!-- _________________SUBMENU OF CONFI-EMPLOYEE_____________________ -->
+
+        <menuitem id="menu_departure_reasons"
+                  name="Departure Reasons"
+                  parent="menu_confi_employee"
+                  action="actions_departure_reasons"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_Admin"/>
+
+<!-- _________________SUBMENU OF CONFI-EMPLOYEE_____________________ -->
+
+        <menuitem id="menu_employee_tags"
+                  name="tags"
+                  parent="menu_confi_employee"
+                  action="actions_Tags"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_Admin"/>
+
+<!-- _________________RECRUITMENT MENU_____________________ -->
+
+         <menuitem id="menu_confi_recruitment"
+                  name="Recruitment"
+                  parent="menu_employee_configuration"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_Admin"/>
+
+<!-- _________________SUBMENU OF CONFI-RECRUITMENT_____________________ -->
+
+        <menuitem id="menu_recruitment_job_posi"
+                  name="Job position"
+                  parent="menu_confi_recruitment"
+                  action="actions_jobposition"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_Admin"/>
+
+<!-- _________________SUBMENU OF CONFI-RECRUITMENT_____________________ -->
+
+        <menuitem id="menu_recruitment_emp_type"
+                  name="Employee type"
+                  parent="menu_confi_recruitment"
+                  action="actions_employee_type"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_Admin"/>
+
+<!-- _________________SUBMENU OF CONFIGURATION_____________________ -->
+    
+         <menuitem id="menu_confi_Activity_planning"
+                  name="Activity planning"
+                  parent="menu_employee_configuration"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_Admin"/>
+
+<!-- ______________SUBMENU OF CONFI-ACTIVITY_PLANNING________________ -->
+
+        <menuitem id="menu_On\Offboarding"
+                  name="On\Off boarding"
+                  parent="menu_confi_Activity_planning"
+                  action="actions_On\Offboarding"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_Admin"/>
+
+<!-- _________________SUBMENU OF CONFIGURATION_____________________ -->
+    
+         <menuitem id="menu_confi_Challenges"
+                  name="Challenges"
+                  parent="menu_employee_configuration"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_Admin"/>
+
+ <!-- ______________SUBMENU OF CONFI-CHALLENGES________________ -->
+
+        <menuitem id="menu_Badges"
+                  name="Badges"
+                  parent="menu_confi_Challenges"
+                  action="actions_On\Offboarding"
+                  sequence="10"
+                  groups="emp.group_manager,emp.group_Admin"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--******************************  START ACTIONS ****************************************************** -->
+
+    <!-- _____________________ Department Action ___________________________________________ -->
+
+        <record id="actions_dept" model="ir.actions.act_window">
+            <field name="name">Department</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">emp.dept</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <!-- _____________________ Work location Action _________________________________________ -->
+
+        <record id="actions_work_location" model="ir.actions.act_window">
+            <field name="name">Work location</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">emp.work_location</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <!-- ______________________Departure Reasons Action______________________________________ -->
+
+        <record id="actions_departure_reasons" model="ir.actions.act_window">
+            <field name="name">Departure Reasons</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">emp.dept</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <!-- ___________________________Tags Action _______________________________________________-->
+
+        <record id="actions_Tags" model="ir.actions.act_window">
+            <field name="name">Tags</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">emp.tags</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+    <!-- ________________________job Position Action __________________________________________ -->
+
+         <record id="actions_jobposition" model="ir.actions.act_window">
+            <field name="name">Job position</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">emp.jobposition</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <!-- ________________________ Employee Type Action ______________________________________________  -->
+
+        <record id="actions_employee_type" model="ir.actions.act_window">
+            <field name="name">Employee type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">emp.emptype</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+    <!-- ________________________ On\Off boarding Action ______________________________________________  -->
+
+        <record id="actions_On\Offboarding" model="ir.actions.act_window">
+            <field name="name">Plans</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">emp.plan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!-- **************************** END ACTIONS ******************************************************** -->
+        
+
+<!-- **************************** START TREE AND FORM VIEWS *****************************************  -->
+
+    <!-- __________________________ Department Form view ________________________________________ -->
+
+        <record id="view_employee_dept_form" model="ir.ui.view">
+            <field name="name">emp.dept.form</field>
+            <field name="model">emp.dept</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="manager_id"/>
+                            <field name="parent_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+ <!-- ____________________________ Department Tree view ________________________________________ -->
+
+    <record id="view_employee_dept_tree" model="ir.ui.view">
+         <field name="name">emp.dept.tree</field>
+            <field name="model">emp.dept</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+    </record>
+
+<!-- _________________________ Work Location Form View ________________________________________ -->
+
+    <record id="view_employee_worklocation_form" model="ir.ui.view">
+        <field name="name">emp.work_location.form</field>
+        <field name="model">emp.work_location</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="work_location"/>
+                        <field name="address"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+ <!-- _________________________Work Location Tree View ________________________________________ -->
+
+    <record id="view_employee_worklocation_tree" model="ir.ui.view">
+            <field name="name">emp.work_location.tree</field>
+            <field name="model">emp.work_location</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="work_location"/>
+                </tree>
+            </field>
+    </record>
+
+<!-- __________________________ Tags Tree View ________________________________________________ -->
+
+    <record id="view_employee_tags_tree" model="ir.ui.view">
+            <field name="name">emp.tags.tree</field>
+            <field name="model">emp.tags</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+    </record>
+        
+
+<!-- ____________________Job Position Form View _____________________________________________ -->
+
+<record id="view_recruitment_jobposition_form" model="ir.ui.view">
+        <field name="name">emp.jobposition.form</field>
+        <field name="model">emp.jobposition</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="job_position"/>
+                    </group>
+                        <notebook>
+                        
+                            <page string="Recruitment" >   
+                                <group>
+                                    <field name="department_name"/>
+                                    <field name="employee_type_id"/>      
+                                </group>    
+                            </page>  
+
+                            <page string="Job Summary" >   
+                                <group>
+                                    <field name="description"/>     
+                                </group>    
+                            </page> 
+
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+<!-- _____________________Job Position Tree View ____________________________________________-->
+
+        <record id="view_recruitment_jobposition_tree" model="ir.ui.view">
+            <field name="name">emp.jobposition.tree</field>
+            <field name="model">emp.jobposition</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="job_position"/>
+                </tree>
+            </field>
+        </record>
+
+<!-- __________________________ employee type Tree View ________________________________________________ -->
+
+    <record id="view_employee_type_tree" model="ir.ui.view">
+            <field name="name">emp.emptype.tree</field>
+            <field name="model">emp.emptype</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+    </record>
+
+
+
+    <!-- ____________________On\Off boarding plans Form View _____________________________________________ -->
+
+<record id="view_plans_form" model="ir.ui.view">
+        <field name="name">emp.plan.form</field>
+        <field name="model">emp.plan</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="department_name"/>
+                    </group>
+                        <notebook>
+                        
+                            <page string="Activity To Generate" >   
+                                <group>
+                                    <!-- <field name="department_name"/>
+                                    <field name="employee_type_id"/>       -->
+                                </group>    
+                            </page>  
+
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+<!-- _____________________On\Off boarding plans Tree View ____________________________________________-->
+
+        <record id="view_plans_tree" model="ir.ui.view">
+            <field name="name">emp.plan.tree</field>
+            <field name="model">emp.plan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="Name"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+
+
+
+    </data>
+</odoo>
+
+
+
